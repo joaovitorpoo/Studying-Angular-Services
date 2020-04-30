@@ -23,13 +23,13 @@ export class PessoasComponent implements OnInit {
   detalhes(id: number) {
     this.detalhePessoa = true;
     this.pessoa = this.pessoasService.getPessoa(id); 
-    console.log(this.pessoa);
   }
-  alterarNomePessoa(id: number, name: string){
+  alterarNomePessoa(_pessoa){
     this.pessoasArray.forEach( pessoa => {
-      if(pessoa.id == id){
-        pessoa.name = name;
+      if(pessoa.id == _pessoa.id){
+        pessoa.name = _pessoa.name;
       }
     })
+    this.pessoasService.atualizarPessoa(_pessoa.id);
   }
 }

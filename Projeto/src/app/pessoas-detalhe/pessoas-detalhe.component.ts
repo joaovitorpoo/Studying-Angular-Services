@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PessoasService} from '../pessoas.service';
 
 @Component({
@@ -8,10 +8,15 @@ import { PessoasService} from '../pessoas.service';
 })
 export class PessoasDetalheComponent implements OnInit {
   @Input() Pessoa;
-
+  @Output() atualizarDado = new EventEmitter();
   constructor(private pessoasService: PessoasService) { }
 
   ngOnInit(): void {
   }
 
+  atualizarDados(id: number){
+    let name: String = "Joao Vitor";
+    let pessoa = {id, name};
+    this.atualizarDado.emit(pessoa);
+  }
 }
