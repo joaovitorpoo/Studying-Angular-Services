@@ -9,7 +9,7 @@
         <td>{{ pessoa.id }}</td>
         <td>{{ pessoa.name }}</td>
         <td>{{ pessoa.email }}</td>
-        <td><button>Detalhe</button></td>
+        <td><button (click)=detalhes(pessoa.id)>Detalhe</button></td>
     </tr>
 </table>
 <div *ngIf="detalhePessoa">

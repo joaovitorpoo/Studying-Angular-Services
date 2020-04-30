@@ -54,18 +54,20 @@ export class PessoasService {
       "sexo": "female",
       "email": "bonnieestrada@eyewax.com"
     }];
-
+  
   constructor() { }
 
   getPessoas(){
     return this.pessoasArray;
   }
-  getPessoa(id: number){
+  getPessoa (id: number) {
+    let retorno: pessoas;
     this.pessoasArray.forEach( pessoa => {
       if(pessoa.id == id){
-        return pessoa;
+        retorno = pessoa;
       }
     })
+    return retorno;
   }
   atualizarPessoa(id: number){
     console.log(id);
