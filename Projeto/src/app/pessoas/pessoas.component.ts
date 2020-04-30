@@ -10,7 +10,7 @@ import { PessoasService} from '../pessoas.service';
 export class PessoasComponent implements OnInit {
 
   pessoasArray: pessoas[];
-  detalhePessoa: boolean = false;
+  detalhePessoa: boolean = true;
   pessoa: pessoas;
 
   constructor(private pessoasService: PessoasService) { }
@@ -18,7 +18,7 @@ export class PessoasComponent implements OnInit {
   ngOnInit(): void {
     this.pessoasArray = this.pessoasService.getPessoas();
   }
-
+  
   alterarNomePessoa(id: number, name: string){
     this.pessoasArray.forEach( pessoa => {
       if(pessoa.id == id){
