@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { pessoas } from './pessoas.model';
+import { PessoasService} from '../pessoas.service';
 
 @Component({
   selector: 'app-pessoas',
@@ -8,13 +9,14 @@ import { pessoas } from './pessoas.model';
 })
 export class PessoasComponent implements OnInit {
 
-  pessoasArray: pessoas[] = [];
+  pessoasArray: pessoas[];
   detalhePessoa: boolean = false;
   pessoa: pessoas;
 
-  constructor() { }
+  constructor(private pessoasService: PessoasService) { }
 
   ngOnInit(): void {
+    this.pessoasArray = this.pessoasService.getPessoas();
   }
 
   alterarNomePessoa(id: number, name: string){

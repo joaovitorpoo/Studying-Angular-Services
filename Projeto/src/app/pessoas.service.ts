@@ -8,7 +8,7 @@ export class PessoasService {
   pessoasArray: pessoas[] = [
     {
       "id": 0,
-      "nome": "Saunders Rosa",
+      "name": "Saunders Rosa",
       "idade": 23,
       "corOlhos": "brown",
       "sexo": "male",
@@ -60,14 +60,14 @@ export class PessoasService {
   getPessoas(){
     return this.pessoasArray;
   }
-  getPessoa(id){
+  getPessoa(id: number){
     this.pessoasArray.forEach( pessoa => {
       if(pessoa.id == id){
         return pessoa;
       }
     })
   }
-  atualizarPessoa(id){
+  atualizarPessoa(id: number){
     console.log(id);
   }
 }
