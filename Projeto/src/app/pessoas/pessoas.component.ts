@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { pessoas } from './pessoas.model';
 
 @Component({
   selector: 'app-pessoas',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pessoas.component.css']
 })
 export class PessoasComponent implements OnInit {
+
+  pessoasArray: pessoas[] =
 
   constructor() { }
 
