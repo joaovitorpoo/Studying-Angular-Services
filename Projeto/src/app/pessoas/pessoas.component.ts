@@ -8,11 +8,20 @@ import { pessoas } from './pessoas.model';
 })
 export class PessoasComponent implements OnInit {
 
-  pessoasArray: pessoas[] =
+  pessoasArray: pessoas[] = [];
+  detalhePessoa: boolean = false;
+  pessoa: pessoas;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  alterarNomePessoa(id: number, name: string){
+    this.pessoasArray.forEach( pessoa => {
+      if(pessoa.id == id){
+        pessoa.name = name;
+      }
+    })
+  }
 }
